@@ -8,6 +8,7 @@ const app = express();
 
 connectDB();
 app.use(express.json());
+app.use(cros());
 
 app.use("/api/students",require("./controllerRoutes/studentControllerRouter"))
 const PORT = process.env.PORT;
