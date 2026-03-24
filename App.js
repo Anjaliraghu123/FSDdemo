@@ -1,17 +1,21 @@
 const express = require("express"); 
 const connectDB = require("./config/db");
-const dotenv = require("dotenv")
+const dotenv = require("dotenv");
+const cors = require("cors"); 
 
 dotenv.config();
 
 const app = express();
 
 connectDB();
-app.use(express.json());
-app.use(cros());
 
-app.use("/api/students",require("./controllerRoutes/studentControllerRouter"))
+app.use(express.json());
+app.use(cors()); 
+
+app.use("/api/students", require("./controllerRoutes/studentControllerRouter"));
+
 const PORT = process.env.PORT;
-app.listen(PORT ,() =>{
-    console.log("server is runing successfully in port number")
-})
+
+app.listen(PORT, () => {
+    console.log("Server is running successfully on port"); 
+});
