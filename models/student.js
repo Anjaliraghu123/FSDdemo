@@ -3,15 +3,15 @@ const mongoose = require("mongoose");
 const studentSchema = new mongoose.Schema({
     name:{
         type:String,
-        require:true
+        required:true
     },
     age:{
         type:Number,
-        require:true
+        required:true
     },
     course:{
-        type:Number,
-        require:true
+        type:String,
+        required:true
     }
 })
 
